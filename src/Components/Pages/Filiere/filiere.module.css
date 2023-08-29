@@ -1,0 +1,51 @@
+.filiereImage {
+  height: 40vh;
+  width: 100%;
+  background-image: url("../../../Assets/filiere-universite.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filiereImage h1 {
+  margin: 0;
+  font-size: 2em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.filiere__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filiere__presentation {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.filiere__research {
+  height: 10vh;
+  width: 60%;
+  background-color: magenta;
+  margin-bottom: 5vh;
+}
+.filiere__list {
+  width: 80%;
+  margin-bottom: 5vh;
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 5vh;
+}
+.filiere__card {
+  height: 50vh;
+  width: 40vh;
+  background-color: blueviolet;
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15vh;
+}
+
+.login__box {
+  background-color: aqua;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5vh;
+}
+.login__form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+}
+.login__form label {
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 1.2em;
+}
+
+.login__form input {
+  height: 5vh;
+  width: 60vh;
+}
+
+.login__form button {
+  height: 5vh;
+  width: 15vh;
+  border-radius: 1vh;
+  cursor: pointer;
+}

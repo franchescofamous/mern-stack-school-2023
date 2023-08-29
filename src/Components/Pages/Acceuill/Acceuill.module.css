@@ -1,0 +1,48 @@
+.schoolImage {
+  height: 80vh;
+  width: 100%;
+  background-image: url("../../../Assets/mern-school.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+.schoolImage h1 {
+  margin-top: 0;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.schoolImage p {
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.presentation__box {
+  width: 70%;
+
+  display: flex;
+  justify-content: space-around;
+  margin: 5vh;
+}
+.presentation__box__view {
+  height: 40vh;
+  width: 40%;
+  background-image: url("../../../Assets/cours-universite.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.presentation__box__description {
+  width: 55%;
+}

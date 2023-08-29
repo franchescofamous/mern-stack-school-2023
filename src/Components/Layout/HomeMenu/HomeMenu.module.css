@@ -1,0 +1,73 @@
+.header {
+  height: 11vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  overflow: hidden;
+}
+
+.logo {
+  height: 100%;
+  width: fit-content;
+}
+
+.nav {
+  height: 100%;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav menu {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+  width: 100%;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1.4em;
+  font-style: italic;
+}
+.nav .active {
+  font-size: 3em;
+}
+
+.options {
+  height: 100%;
+  width: 20%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.options a {
+  text-decoration: none;
+  font-size: 1.2em;
+  font-style: italic;
+}
+.options button {
+  border: 1px solid black;
+  border-radius: 1vh;
+  border: none;
+}
