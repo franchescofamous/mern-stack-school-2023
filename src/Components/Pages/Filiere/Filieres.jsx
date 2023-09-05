@@ -1,18 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import style from "./filiere.module.css";
 import axios from "axios";
 
 const Filieres = () => {
+  let [filiereList, setFiliereList] = useState(null);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/signup")
-      .then((res) => {
-        console.log(res.data);
+      .get("http://localhost:5000/filiere/select")
+      .then((reponse) => {
+        console.log(reponse.data);
+        setFiliereList(reponse.data.filiereListe);
       })
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
+  let filiereElt =
+    filiereList &&
+    filiereList.map((filiere) => {
+      return (
+        <article className={style.filiere__card} key={filiere.id_filiere}>
+          <h3> {filiere.nom_filiere} </h3>
+          <p>{filiere.description_filiere}</p>
+          <button>
+            <Link to={`${filiere.id_filiere}`}>Visiter</Link>
+          </button>
+        </article>
+      );
+    });
   return (
     <>
       <section className={style.filiereImage}>
@@ -36,13 +52,7 @@ const Filieres = () => {
             ipsa voluptatum dolor voluptatibus.
           </p>
           <section className={style.filiere__research}></section>
-          <section className={style.filiere__list}>
-            <article className={style.filiere__card}></article>
-            <article className={style.filiere__card}></article>
-            <article className={style.filiere__card}></article>
-            <article className={style.filiere__card}></article>
-            <article className={style.filiere__card}></article>
-          </section>
+          <section className={style.filiere__list}>{filiereElt}</section>
         </section>
       </section>
     </>

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import style from "./Signup.module.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Signup = () => {
+  let nav = useNavigate();
   let [nameInput, setNameInput] = useState("");
   let [surnameInput, setSurnameInput] = useState("");
   let [emailInput, setEmailInput] = useState("");
@@ -21,6 +24,13 @@ const Signup = () => {
                   password: pwdlInput,
                 };
                 console.log(signupInfo);
+                axios
+                  .post("http://localhost:5000/student/signup", signupInfo)
+                  .then((reponse) => {
+                    console.log(reponse);
+                    nav("/login");
+                  })
+                  .catch((error) => console.log(error));
               }}
             >
               <p className={style.signup__form__info}></p>

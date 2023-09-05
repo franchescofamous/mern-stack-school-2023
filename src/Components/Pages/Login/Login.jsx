@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import style from "./Login.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  let nav = useNavigate();
   let [emailInput, setEmailInput] = useState("");
   let [pwdlInput, setPwd] = useState("");
-  let personne = { nom: "abalo", prenom: "koffi", age: 21 };
+  /* let personne = { nom: "abalo", prenom: "koffi", age: 21 };
   let a = JSON.stringify(personne);
   console.log(a);
   console.log(typeof a);
   let b = JSON.parse(a);
   console.log(b);
-  console.log(typeof b);
+  console.log(typeof b); */
 
   return (
     <>
@@ -24,13 +26,15 @@ const Login = () => {
                 let loginInfo = { email: emailInput, password: pwdlInput };
                 console.log(loginInfo);
                 axios
-                  .post("http://localhost:5000/login", loginInfo)
+                  .post("http://localhost:5000/student/login", loginInfo)
                   .then((res) => {
                     console.log(res);
+                    //nav("/");
+                    localStorage.setItem("token", res.data);
+                    localStorage.setItem("mail", emailInput);
+                    nav("/");
                   })
-                  .catch((error) => {
-                    console.log(error);
-                  });
+                  .catch((error) => console.log(error));
               }}
             >
               <p className={style.login__form__info}></p>

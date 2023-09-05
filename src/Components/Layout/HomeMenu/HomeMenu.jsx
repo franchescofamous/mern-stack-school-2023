@@ -1,9 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import style from "./HomeMenu.module.css";
 import logo from "../../../Assets/logo.png";
 
 const HomeMenu = () => {
+  let location = useLocation();
+  console.log(location);
   return (
     <header className={style.header}>
       <section className={style.logo}>
@@ -22,9 +24,11 @@ const HomeMenu = () => {
         </menu>
       </section>
       <section className={style.options}>
-        <button>
-          <NavLink to={"/login"}>Connexion</NavLink>
-        </button>
+        {location.pathname === "/signup" && (
+          <button>
+            <NavLink to={"/login"}>Connexion</NavLink>
+          </button>
+        )}
         <button>
           <NavLink to={"/signup"}>Inscription</NavLink>
         </button>

@@ -1,6 +1,7 @@
 import React from "react";
 
 import style from "./Acceuill.module.css";
+import axios from "axios";
 const Acceuill = () => {
   return (
     <>
